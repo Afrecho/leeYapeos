@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación de pago por Yape</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div id="all">
+
+    <div id="titulo">
+      <h1>YAPEOS BODEGA DOMINIQUE</h1>
+    </div>
+    
+    <div class="contenedor">
+
+      <div class="tabla-ventas">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Concepto</th>
+              <th>Monto</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div id="verDetalles">
+        <details>
+          <summary>DETALLES</summary>
+          <table id="detallesTable">
+            <thead>
+              <tr>
+                <th>Monto</th>
+                <th>Celular</th>
+                <th>Nombre Pagador</th>
+                <th>Documento Pagador</th>
+                <th>Número Receptor</th>
+                <th>Nombre Receptor</th>
+                <th>Concepto</th>
+                <th>Hora</th>
+                <th>ID Compra</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </details>
+        <button id="limpiarDetalleCompra" class="btn">LIMPIAR</button>
+        <span id="dataList"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const comprasPorDefecto = [
+      {
+        monto: 100,
+        celular: "987654321",
+        nombrePagador: "Juan Pérez",
+        numeroDocumentoPagador: "12345678",
+        numeroReceptor: "9876543210",
+        nombreReceptor: "Ana González",
+        concepto: "Compra de productos",
+        hora: "09/06/2012, 10:34:27",
+        idCompra: 1
+      },
+    ];
+
+    const compras = comprasPorDefecto;
+    const tablaVentasBody = document.querySelector(".tabla-ventas tbody");
+    const detallesTableBody = document.querySelector("#detallesTable tbody");
+
+    function imprimirListaCompras(tabla, datos) {
+      tabla.innerHTML = "";
+      datos.forEach(dato => {
+        const fila = document.createElement("tr");
+        const nombreCelda = document.createElement("td");
+        nombreCelda.textContent = dato.nombrePagador;
+        fila.appendChild(nombreCelda);
+
+        const conceptoCelda = document.createElement("td");
+        conceptoCelda.textContent = dato.concepto;
+        fila.appendChild(conceptoCelda);
+
+        const montoCelda = document.createElement("td");
+        montoCelda.textContent = dato.monto;
+        fila.appendChild(montoCelda);
+
+        tabla.appendChild(fila);
+      });
+    }
+
+    function imprimirDetallesCompras() {
+      detallesTableBody.innerHTML = "";
+      compras.forEach(compra => {
+        const fila = document.createElement("tr");
+        for (const propiedad in compra) {
+          const celda = document.createElement("td");
+          celda.textContent = compra[propiedad];
+          fila.appendChild(celda);
+        }
+        detallesTableBody.appendChild(fila);
+      });
+    }
+
+    // Agregar esta línea para imprimir la lista al cargar la página
+    imprimirListaCompras(tablaVentasBody, compras);
+    imprimirDetallesCompras();
+  </script>
+</body>
+</html>
