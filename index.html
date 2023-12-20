@@ -24,7 +24,7 @@
               <th>Monto</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody id="tablaVentasBody"></tbody>
         </table>
       </div>
 
@@ -45,7 +45,7 @@
                 <th>ID Compra</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="detallesTableBody"></tbody>
           </table>
         </details>
         <button id="limpiarDetalleCompra" class="btn">LIMPIAR</button>
@@ -55,30 +55,23 @@
   </div>
 
   <script>
-    const comprasPorDefecto = [
-      {
-        monto: 100,
-        celular: "987654321",
-        nombrePagador: "Juan Pérez",
-        numeroDocumentoPagador: "12345678",
-        numeroReceptor: "9876543210",
-        nombreReceptor: "Ana González",
-        concepto: "Compra de productos",
-        hora: "09/06/2012, 10:34:27",
-        idCompra: 1
-      },
-    ];
-
-    const compras = comprasPorDefecto;
-    const tablaVentasBody = document.querySelector(".tabla-ventas tbody");
-    const detallesTableBody = document.querySelector("#detallesTable tbody");
+    function cargarDatosDesdeBD() {
+      // Realizar una solicitud al servidor (por ejemplo, mediante fetch) para obtener datos desde tu base de datos
+      fetch('obtener_datos.php')
+        .then(response => response.json())
+        .then(data => {
+          imprimirListaCompras(document.getElementById('tablaVentasBody'), data);
+          imprimirDetallesCompras(document.getElementById('detallesTableBody'), data);
+        })
+        .catch(error => console.error('Error al obtener datos desde la base de datos:', error));
+    }
 
     function imprimirListaCompras(tabla, datos) {
       tabla.innerHTML = "";
       datos.forEach(dato => {
         const fila = document.createElement("tr");
         const nombreCelda = document.createElement("td");
-        nombreCelda.textContent = dato.nombrePagador;
+        nombreCelda.textContent = dato.nombrecliente;
         fila.appendChild(nombreCelda);
 
         const conceptoCelda = document.createElement("td");
@@ -93,22 +86,35 @@
       });
     }
 
-    function imprimirDetallesCompras() {
-      detallesTableBody.innerHTML = "";
-      compras.forEach(compra => {
+    function imprimirDetallesCompras(tabla, datos) {
+      tabla.innerHTML = "";
+      datos.forEach(compra => {
         const fila = document.createElement("tr");
         for (const propiedad in compra) {
           const celda = document.createElement("td");
           celda.textContent = compra[propiedad];
           fila.appendChild(celda);
         }
-        detallesTableBody.appendChild(fila);
+        tabla.appendChild(fila);
       });
     }
 
-    // Agregar esta línea para imprimir la lista al cargar la página
-    imprimirListaCompras(tablaVentasBody, compras);
-    imprimirDetallesCompras();
+    function limpiarListaCompras() {
+      document.getElementById('dataList').textContent = "";
+    }
+
+    // Llamar a la función para cargar datos al cargar la página
+    cargarDatosDesdeBD();
+
+    function cargarDatosCada10Segundos() {
+    setInterval(() => {
+      cargarDatosDesdeBD();
+    }, 10000); // 10000 milisegundos = 10 segundos
+  }
+
+  // Llamar a la función para cargar datos al cargar la página y establecer la recarga automática
+  cargarDatosDesdeBD();
+  cargarDatosCada10Segundos();
   </script>
 </body>
 </html>

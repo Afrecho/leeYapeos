@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Formulario de compra</title>
+</head>
+<body>
+  <div id="allformulario">
+    <div class="formulario">
+        <h2>Formulario de compra</h2>
+        <form id="formularioCompra" action="insert_data.php" method="post">
+
+          <div class="form-group">
+            <label for="monto">Monto</label>
+            <input type="number" class="form-control" id="monto" name="monto" placeholder="Monto">
+          </div>
+          <div class="form-group">
+            <label for="celular">Celular</label>
+            <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular del pagador">
+          </div>
+          <div class="form-group">
+            <label for="nombre-pagador">Nombre del pagador</label>
+            <input type="text" class="form-control" id="nombre-pagador" name="nombre-pagador" placeholder="Nombre del pagador">
+          </div>
+          <div class="form-group">
+            <label for="numero-documento-pagador">Doc pagador</label>
+            <input type="text" class="form-control" id="numero-documento-pagador" name="numero-documento-pagador" placeholder="Documento del pagador">
+          </div>
+          <div class="form-group">
+            <label for="numero-receptor">Número del receptor</label>
+            <input type="text" class="form-control" id="numero-receptor" name="numero-receptor" placeholder="Número del receptor">
+          </div>
+          <div class="form-group">
+            <label for="nombre-receptor">Nombre del receptor</label>
+            <input type="text" class="form-control" id="nombre-receptor" name="nombre-receptor" placeholder="Nombre del receptor">
+          </div>
+          <div class="form-group">
+            <label for="concepto">Concepto de pago</label>
+            <input type="text" class="form-control" id="concepto" name="concepto" placeholder="Concepto del pago">
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Confirmar pago</button>
+          <button type="button" class="btn btn-secondary" id="limpiarFormulario">Limpiar formulario</button>
+          <button type="button" class="btn btn-secondary" id="random">Random</button>
+        </form>
+    </div>
+  </div>
+    <script>
+        document.getElementById('random').addEventListener('click', function() {
+            // Datos ficticios para el random
+            const nombres = ["Juan", "Ana", "Carlos", "María", "Pedro", "Laura", "José", "Sofía", "Luis", "Elena", "Miguel", "Isabel", "Alejandro", "Valeria", "Francisco", "Lucía", "Javier", "Emma", "Raúl", "Clara", "Diego", "Carmen", "Fernando", "Paula", "Andrés", "Alba", "Alberto", "Marta", "Ricardo", "Natalia", "Manuel", "Victoria"];
+            const apellidos = ["Gómez", "Martínez", "López", "Fernández", "Pérez", "González", "Rodríguez", "Sánchez", "Díaz", "Vásquez", "Romero", "Hernández", "Torres", "Álvarez", "Jiménez", "Ruiz", "Moreno", "Giménez", "Silva", "Navarro", "Rojas", "Soto", "Rivera", "Castro", "Cabrera", "Ortega", "Chávez", "Fuentes", "Aguilar", "Mendoza", "Ramírez", "Herrera", "Flores"];
+            const conceptos = ["Compra de alimentos", "Pago de servicios", "Regalo de cumpleaños", "Compra en línea", "Cena en restaurante", "Compra de ropa", "Internet", "Donación", "Gastos médicos", "Compra de tecnología", "Pago de alquiler", "Entretenimiento", "Compra de libros", "Viaje", "Compra de regalos", "Educación", "Gastos de mascotas", "Compra de muebles", "Inversión", "Otros"];
+
+            // Función para obtener un elemento aleatorio de una lista
+            function obtenerElementoAleatorio(lista) {
+                const indice = Math.floor(Math.random() * lista.length);
+                return lista[indice];
+            }
+
+            // Llenar el formulario con datos aleatorios
+            document.getElementById('monto').value = Math.floor(Math.random() * 1000) + 1; // Monto entre 1 y 1000
+            document.getElementById('celular').value = "9" + Math.floor(Math.random() * 1000000000); // Celular de 9 dígitos
+            document.getElementById('nombre-pagador').value = obtenerElementoAleatorio(nombres) + " " + obtenerElementoAleatorio(apellidos);
+            document.getElementById('numero-documento-pagador').value = Math.floor(Math.random() * 100000000); // Documento de 8 dígitos
+            document.getElementById('numero-receptor').value = "9" + Math.floor(Math.random() * 1000000000); // Número de receptor de 9 dígitos
+            document.getElementById('nombre-receptor').value = obtenerElementoAleatorio(nombres) + " " + obtenerElementoAleatorio(apellidos);
+            document.getElementById('concepto').value = obtenerElementoAleatorio(conceptos);
+        });
+
+        document.getElementById('limpiarFormulario').addEventListener('click', function() {
+            document.getElementById('formularioCompra').reset();
+        });
+    </script>
+</body>
+</html>
