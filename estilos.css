@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+html{
+
+}
+
 #all{
     min-width: 100vw;
     min-height: 100vh;
@@ -13,6 +17,7 @@
 body {
     font-family: sans-serif;
     background-color: rgba(169, 169, 169, 0.089);
+    overflow-x: hidden;
   }
   
   .contenedor {
@@ -41,7 +46,7 @@ body {
   .tabla-ventas{
     width: 50%;
     margin: 0 auto;
-    background-color: #ebe6ea;
+    background-color: hsla(312, 98%, 41%, 0.199);
     color: #273a2d;
   }
   
@@ -54,6 +59,10 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
   }
+
+  
+
+  
 
   #allformulario{
     padding-top: 50px;
@@ -98,7 +107,7 @@ body {
     display: block;
     position: absolute;
     width: 88%;
-    left: 20px;
+    left: 0px;
     min-height: 100px;
     top: 450px;
     height: 660px;
@@ -106,6 +115,13 @@ body {
     bottom: 20px;
     padding: 10px 20px;
     
+  }
+
+  #verDetalles table th, td {
+    padding: 10px 3px;
+    background-color: rgba(0, 0, 0, 0.158);
+    font-family: sans-serif;
+    font-weight: normal;
   }
 
   .btn{

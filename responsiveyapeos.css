@@ -1,0 +1,180 @@
+@media (min-width: 960px) and (max-width: 1279px){
+    body{
+        background-color: rgba(0, 255, 255, 0.171);
+        padding: 0;
+    }
+
+    .tabla-ventas{
+      width: 60%;
+      margin: 0 auto;
+      
+    }
+
+    #verDetalles{
+        
+        width: 100%;
+        left: 00px;
+        min-height: 100px;
+        top: 450px;
+        height: 660px;
+        background-color: #e4c5c4;
+        bottom: 20px;
+        padding: 10px 0px;
+        
+      }
+
+
+      #detallesTable thead{
+        font-family: sans-serif;
+      }
+
+
+
+    }
+    
+    /* ******************************* */
+    /* ******************************* */
+    /*TABLET HORIZONTAL*/
+    /* ******************************* */
+    /* ******************************* */
+    
+    @media (min-width: 601px) and (max-width: 959px) { 
+    
+        body{
+            background-color: rgba(48, 9, 224, 0.26);
+        }
+
+        #titulo{
+          align-content: center;
+          padding: 15px 0;
+        }
+
+        #titulo h1{
+        font-size: 1.6em;
+        text-align: center;
+
+        }
+
+        .tabla-ventas{
+          width: 100%;
+          margin: 0 auto;
+          
+        }
+
+        #verDetalles{
+        
+          width: 100%;
+          left: 0px;
+          min-height: 100px;
+          top: 450px;
+          height: 660px;
+          background-color: #e4c5c4;
+          bottom: 20px;
+          padding: 10px 0px;
+          
+        }
+
+        #verDetalles table th, td {
+          padding: 5px 2px;
+          
+        }
+        
+        #detallesTable thead{
+          font-family: sans-serif;
+          font-size: .9em;
+        }
+    
+    
+    }
+    
+    /* ******************************* */
+    /* ******************************* */
+    /*TABLET VERTICAL*/
+    /* ******************************* */
+    /* ******************************* */
+    
+    @media (max-width: 600px) {
+    
+        body{
+            background-color: rgba(136, 255, 0, 0.158);
+        }
+  
+        #titulo{
+          align-content: center;
+          padding: 12px 0;
+        }
+
+        #titulo h1{
+        font-size: 1.4.5em;
+        text-align: center;
+
+        }
+
+        .tabla-ventas{
+          width: 100%;
+          margin: 0 auto;
+          
+        }
+        
+        #verDetalles{
+        
+          width: 100%;
+          left: 0px;
+          min-height: 100px;
+          top: 450px;
+          height: 660px;
+          background-color: #e4c5c4;
+          bottom: 20px;
+          padding: 10px 0px;
+          
+        }
+
+        #verDetalles table th, td {
+          padding: 7px 2px;
+          
+        }
+        
+        #detallesTable thead{
+          font-family: sans-serif;
+          font-size: .8em;
+        }
+    
+    }
+    /* ******************************* */
+    /* ******************************* */
+    /*CELULAR VERTICAL*/
+    /* ******************************* */
+    /* ******************************* */
+    
+    @media (max-width: 480px){
+    
+        body{
+            background-color: rgb(6, 14, 14);
+        }
+
+        .tabla-ventas{
+          width: 100%;
+          margin: 0 auto;
+          
+        }
+    
+    }
+    
+    
+    @media (min-width: 1025px){
+    
+    
+    }
+    
+    
+    @media (hover: none) {
+      .btn-alf:hover,
+      .btn-style:hover {
+        background-color: #04253a;
+        color: #ede6db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        transition: none;
+      }
+    }
+    
+    
