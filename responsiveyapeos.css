@@ -16,7 +16,7 @@
         left: 00px;
         min-height: 100px;
         top: 450px;
-        height: 660px;
+        height: auto;
         background-color: #e4c5c4;
         bottom: 20px;
         padding: 10px 0px;
@@ -67,7 +67,6 @@
           left: 0px;
           min-height: 100px;
           top: 450px;
-          height: 660px;
           background-color: #e4c5c4;
           bottom: 20px;
           padding: 10px 0px;
@@ -122,7 +121,6 @@
           left: 0px;
           min-height: 100px;
           top: 450px;
-          height: 660px;
           background-color: #e4c5c4;
           bottom: 20px;
           padding: 10px 0px;

@@ -25,9 +25,10 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: #ebeae6;
-
+    background-color: #e4e2db;
+    
     min-height:  300px;
+    max-height: 340px;
   }
 
 
@@ -49,7 +50,32 @@ body {
     margin: 0 auto;
     background-color: hsla(312, 98%, 41%, 0.199);
     color: #273a2d;
+    overflow: scroll;
+    overflow-x: hidden;
+
   }
+
+  .tabla-ventas::-webkit-scrollbar {
+    width: 12px;
+    background: #0000002d;
+    border-radius: 14px;
+}
+
+.tabla-ventas::-webkit-scrollbar-thumb {
+  background: #5a4b4b71;
+  border-radius: 7px;
+}
+
+.tabla-ventas::-webkit-scrollbar-thumb:hover {
+  background: #06070183;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.tabla-ventas::-webkit-scrollbar-thumb:active {
+  background-color: #383a3b93;
+}
+
   
   table {
     border-collapse: collapse;
@@ -65,6 +91,64 @@ body {
 
   
 
+
+  
+
+  #verDetalles{
+    display: block;
+    position: absolute;
+    width: 88%;
+    left: 5%;
+    min-height: 100px;
+    top: 450px;
+    height: auto;
+    background-color: #08705679;
+    bottom: 20px;
+    padding: 10px 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    
+  }
+
+  
+  #verDetalles::-webkit-scrollbar {
+    width: 12px;
+    background: #0000002d;
+    border-radius: 14px;
+}
+
+#verDetalles::-webkit-scrollbar-thumb {
+  background: #5a4b4b71;
+  border-radius: 7px;
+}
+
+#verDetalles::-webkit-scrollbar-thumb:hover {
+  background: #06070183;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+#verDetalles::-webkit-scrollbar-thumb:active {
+  background-color: #383a3b93;
+}
+
+  #verDetalles table th, td {
+    padding: 10px 3px;
+    background-color: rgba(0, 0, 0, 0.158);
+    font-family: sans-serif;
+    font-weight: normal;
+  }
+
+  .btn{
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    background-color: darkgreen;
+    color: chartreuse;
+  }
+
+  /*SIMULADOR*/
+
   #allformulario{
     padding-top: 50px;
     display: block;
@@ -72,6 +156,7 @@ body {
     min-height: 100vh;
     background-color: #cce0d3;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   
   .formulario {
@@ -104,31 +189,3 @@ body {
     margin-top: 20px;
   }
   
-
-  #verDetalles{
-    display: block;
-    position: absolute;
-    width: 88%;
-    left: 5%;
-    min-height: 100px;
-    top: 450px;
-    height: 660px;
-    background-color: #08705679;
-    bottom: 20px;
-    padding: 10px 20px;
-    
-  }
-
-  #verDetalles table th, td {
-    padding: 10px 3px;
-    background-color: rgba(0, 0, 0, 0.158);
-    font-family: sans-serif;
-    font-weight: normal;
-  }
-
-  .btn{
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    background-color: darkgreen;
-    color: chartreuse;
-  }
