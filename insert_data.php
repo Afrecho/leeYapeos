@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 // Manejar la inserción de datos desde el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar que los campos obligatorios están presentes
-    if (isset($_POST['monto'], $_POST['celular'], $_POST['nombre-pagador'], $_POST['numero-documento-pagador'], $_POST['numero-receptor'], $_POST['nombre-receptor'], $_POST['concepto'])) {
+    if (isset($_POST['monto'], $_POST['celular'], $_POST['nombre-pagador'], $_POST['numero-documento-pagador'], $_POST['numero-receptor'], $_POST['concepto'])) {
 
         // Obtener valores del formulario
         $monto = floatval($_POST['monto']);
@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombrecliente = $_POST['nombre-pagador'];
         $numeroDocumentoPagador = $_POST['numero-documento-pagador'];
         $numeroReceptor = $_POST['numero-receptor'];
-        $nombreReceptor = $_POST['nombre-receptor'];
+        // Eliminar la siguiente línea que asigna el valor del campo 'nombre-receptor'
+        //$nombreReceptor = $_POST['nombre-receptor'];
         $concepto = $_POST['concepto'];
 
         // Validar que los campos numéricos son válidos
@@ -37,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fechaHoraPeru = date('Y-m-d H:i:s');
 
         // Preparar la consulta de inserción
-        $sql = "INSERT INTO yapeadas (monto, celular, nombrecliente, dnicliente, numeroproveedor, nombreproveedor, concepto, hora, idcompra) 
-                VALUES ('$monto', '$celular', '$nombrecliente', '$numeroDocumentoPagador', '$numeroReceptor', '$nombreReceptor', '$concepto', '$fechaHoraPeru', null)";
+        $sql = "INSERT INTO yapeadas (monto, celular, nombrecliente, dnicliente, numeroproveedor, concepto, hora, idcompra) 
+                VALUES ('$monto', '$celular', '$nombrecliente', '$numeroDocumentoPagador', '$numeroReceptor', '$concepto', '$fechaHoraPeru', null)";
         
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('Datos insertados correctamente');</script>";
