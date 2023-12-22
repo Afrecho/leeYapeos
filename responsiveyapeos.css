@@ -1,6 +1,6 @@
 @media (min-width: 960px) and (max-width: 1279px){
     body{
-        background-color: rgba(0, 255, 255, 0.171);
+        
         padding: 0;
     }
 
@@ -17,7 +17,7 @@
         min-height: 100px;
         top: 450px;
         height: auto;
-        background-color: #e4c5c4;
+        
         bottom: 20px;
         padding: 10px 0px;
         
@@ -41,7 +41,7 @@
     @media (min-width: 601px) and (max-width: 959px) { 
     
         body{
-            background-color: rgba(48, 9, 224, 0.26);
+            
         }
 
         #titulo{
@@ -67,7 +67,7 @@
           left: 0px;
           min-height: 100px;
           top: 450px;
-          background-color: #e4c5c4;
+          
           bottom: 20px;
           padding: 10px 0px;
           
@@ -95,7 +95,7 @@
     @media (max-width: 600px) {
     
         body{
-            background-color: rgba(136, 255, 0, 0.158);
+            
         }
   
         #titulo{
@@ -121,7 +121,7 @@
           left: 0px;
           min-height: 100px;
           top: 450px;
-          background-color: #e4c5c4;
+          
           bottom: 20px;
           padding: 10px 0px;
           
@@ -147,7 +147,7 @@
     @media (max-width: 480px){
     
         body{
-            background-color: rgb(6, 14, 14);
+            
         }
 
         .tabla-ventas{
