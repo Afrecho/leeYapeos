@@ -16,10 +16,15 @@ html{
 
 body {
     font-family: sans-serif;
-    background-color: #d6e6d2;
+    background-color: #e6d9d2;
     overflow-x: hidden;
     padding: 0;
-  }
+    
+    height: auto;
+    min-height: 100vh;
+
+}
+    
   
   .contenedor {
     width: 100%;
@@ -90,7 +95,13 @@ body {
   
 
   
-
+  summary{
+    
+    padding: 10px 10px;
+    width: auto;
+    font-size: 1.1em;
+    background-color: #d6e6d257;
+  }
 
   
 
@@ -101,9 +112,11 @@ body {
     left: 5%;
     min-height: 100px;
     top: 450px;
+    min-height: 220px;
     height: auto;
     background-color:#671cff;
-    bottom: 20px;
+    margin-bottom: 20px;
+  /*  bottom: 20px;*/
     padding: 10px 20px;
     overflow: scroll;
     overflow-x: hidden;
@@ -114,7 +127,7 @@ body {
   
   #verDetalles::-webkit-scrollbar {
     width: 12px;
-    background: #0000002d;
+    background: #d6e6d244;
     border-radius: 14px;
 }
 
@@ -130,7 +143,7 @@ body {
 
 /* Cambiamos el fondo cuando esté en active */
 #verDetalles::-webkit-scrollbar-thumb:active {
-  background-color: #383a3b93;
+  background-color: #989a9c59;
 }
 
   #verDetalles table th, td {
@@ -145,6 +158,10 @@ body {
     margin-bottom: 10px;
     background-color: #d6e6d2;
     color: #671cff;
+  }
+
+  #detallesTable{
+    
   }
 
   /*SIMULADOR*/
