@@ -27,7 +27,10 @@
               <th>Monto</th>
             </tr>
           </thead>
-          <tbody id="tablaVentasBody"></tbody>
+          
+          <tbody id="tablaVentasBody">
+            
+          </tbody>
         </table>
       </div>
 
@@ -39,18 +42,25 @@
               <tr>
                 <th>Monto</th>
                 <th>Celular</th>
-                <th>Nombre Pagador</th>
-                <th>Documento Pagador</th>
+                <th>Nombre cliente</th>
+                <th>Documento cliente</th>
                 <th>Número Receptor</th>
                 <th>Concepto</th>
                 <th>Hora</th>
                 <th>ID Compra</th>
               </tr>
             </thead>
-            <tbody id="detallesTableBody"></tbody>
+            
+            
+            
+            
+            <tbody id="detallesTableBody">
+              
+            </tbody>
           </table>
         </details>
         <button id="limpiarDetalleCompra" class="btn">LIMPIAR</button>
+        <button id="nublar" class="btn">BLUR</button>
         <span id="dataList"></span>
       </div>
     </div>
@@ -117,6 +127,12 @@ function imprimirDetallesCompras(tabla, datos) {
         cargarDatosDesdeBD();
       }, 10000); // 10000 milisegundos = 10 segundos
     }
+    /*NUBLAR COLUMNAS*/
+    document.getElementById('nublar').addEventListener('click', function() {
+  const detallesTable = document.getElementById('detallesTable');
+  detallesTable.classList.toggle('borroso');
+});
+
 
     // Llamar a la función para cargar datos al cargar la página y establecer la recarga automática
     cargarDatosDesdeBD();

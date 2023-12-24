@@ -41,7 +41,7 @@
     @media (min-width: 601px) and (max-width: 959px) { 
     
         body{
-            
+          background-color: #8b2076;
         }
 
         #titulo{
@@ -150,10 +150,50 @@
             
         }
 
+        #titulo{
+          align-content: center;
+          padding: 12px 0;
+        }
+
+        #titulo h1{
+        font-size: 1.42em;
+        text-align: center;
+
+        }
+
         .tabla-ventas{
           width: 100%;
           margin: 0 auto;
           
+        }
+        
+        #verDetalles{
+        
+          width: 100%;
+          left: 0px;
+          min-height: 150px;
+          height: auto;
+          top: 450px;
+          font-size: .7em;
+          
+          padding: 0px 0px;
+          box-sizing: border-box;
+          overflow-x: scroll;
+        }
+
+        #verDetalles table th, td {
+          padding: 3px 2px;
+          
+        }
+        
+        #detallesTable thead{
+          font-family: sans-serif;
+          font-size: .8em;
+          width: 100%;
+        }
+
+        #detallesTable{
+          overflow-x: scroll;
         }
     
     }

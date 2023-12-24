@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="responsiveyapeos.css">
+    <link rel="stylesheet" href="responsivesimulador.css">
     <link rel="shortcut icon" href="logo_temp.png" type="image/x-icon">
-    <title>Formulario de compra</title>
+    <title>Simulador</title>
 </head>
 <body>
   <div id="allformulario">
@@ -60,12 +60,12 @@
             }
 
             // Llenar el formulario con datos aleatorios
-            document.getElementById('monto').value = Math.floor(Math.random() * 1000) + 1; // Monto entre 1 y 1000
-            document.getElementById('celular').value = "9" + Math.floor(Math.random() * 1000000000); // Celular de 9 dígitos
+            document.getElementById('monto').value = Math.floor(Math.random() * 499.9) + 0.1; // Monto entre 1 y 1000
+            document.getElementById('celular').value = "9" + Math.floor(Math.random() * 99999999); // Celular de 9 dígitos
             document.getElementById('nombre-pagador').value = obtenerElementoAleatorio(nombres) + " " + obtenerElementoAleatorio(apellidos);
-            document.getElementById('numero-documento-pagador').value = Math.floor(Math.random() * 100000000); // Documento de 8 dígitos
-            document.getElementById('numero-receptor').value = "9" + Math.floor(Math.random() * 1000000000); // Número de receptor de 9 dígitos
-            document.getElementById('nombre-receptor').value = obtenerElementoAleatorio(nombres) + " " + obtenerElementoAleatorio(apellidos);
+            document.getElementById('numero-documento-pagador').value = Math.floor(Math.random() * 99999999); // Documento de 8 dígitos
+            document.getElementById('numero-receptor').value = "9" + Math.floor(Math.random() * 999999999); // Número de receptor de 9 dígitos
+            
             document.getElementById('concepto').value = obtenerElementoAleatorio(conceptos);
         });
 

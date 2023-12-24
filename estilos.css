@@ -110,7 +110,7 @@ body {
     position: absolute;
     width: 88%;
     left: 5%;
-    min-height: 100px;
+    
     top: 450px;
     min-height: 220px;
     height: auto;
@@ -206,3 +206,13 @@ body {
     margin-top: 20px;
   }
   
+/*NUBLAR DETALLES*/
+
+.borroso td:nth-child(2),
+.borroso td:nth-child(4),
+.borroso td:nth-child(5),
+.borroso td:nth-child(8) {
+  filter: blur(5px);
+}
+
+
